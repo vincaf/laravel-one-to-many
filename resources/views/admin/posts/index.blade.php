@@ -17,6 +17,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Date</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,7 +28,7 @@
                                         {{ $post->id }}
                                     </a>
                                 </th>
-                                <td>{{ $post->author }}</td>
+                                <td>{{ $post->user->name }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.show', $post->slug) }}">
                                         {{ $post->title }}
@@ -40,12 +41,14 @@
                                     <a href="{{ route('admin.posts.edit', $post->slug) }}" class="btn btn-sm btn-success">
                                         Edit
                                     </a>
+                                </td>
+                                <td>
                                     <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST"
                                         class="form-post-delete" data-post-name="{{ $post->title }}">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-sm btn-danger my-2">
+                                        <button type="submit" class="btn btn-sm btn-danger">
                                             Delete
                                         </button>
                                     </form>

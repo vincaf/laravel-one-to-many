@@ -21,7 +21,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h3 class="mb-2"><strong>{{ $post->title }}</strong></h3>
-                            <p><strong>Author:</strong> {{ $post->author }}</p>
+                            <p><strong>Author:</strong> {{ $post->user->name }}</p>
                             <p>{{ $post->post_content }}</p>
                             <p><strong>Post Date:</strong> {{ $post->post_date }}</p>
                             <div class="mt-5 d-flex">
